@@ -169,6 +169,9 @@ upload.addEventListener("change", () => {
 
             resizer.style.width = image.width;
             resizer.style.height = image.height;
+            resizer.width = image.width;
+            resizer.height = image.height;
+            targetWidth = image.width;
 
             canvas.width = image.width;
             canvas.height = image.height;
