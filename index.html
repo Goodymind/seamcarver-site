@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seam Carver - by Alinus</title>
+    <link href="output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-950 m-5">
+    <header class="m-3">
+        <h1 class="text-8xl text-white">Seam Carver</h1>
+        <h2 class="text-white"><a href="https://itsalinus.com">By Alinus Abuke</a></h2>
+        <article class>
+            <p class="text-blue-50">
+                This was our final project for my Data Structures and Algorithms class.
+                I had a lot of run implementing this in JS.
+            </p>
+            <p class="text-blue-50">
+                This uses the dual-gradient energy function (but not squared to make it run faster). It measures the
+                distinctiveness of a pixel by calculating the rate of change of colors around it.
+            </p>
+            <p>
+                This is actually very slow for large images. I'll optimize this one day.
+            </p>
+        </article>
+    </header>
+    <main class="m-3">
+        <!-- Upload Button -->
+        <label class="block mb-4">
+            <span class="sr-only">Choose image</span>
+            <input id="imageUpload" type="file" accept="image/*" class="block w-full 
+                    text-sm 
+                    text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-lg file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-blue-900 file:text-white
+                    hover:file:bg-blue-850" />
+        </label>
+        <!-- RESIZABLE CONTAINER -->
+        <div id="resizer" class="relative border border-blue-50 origin-top-left hidden">
+            <canvas id="imageCanvas" class="bg-blue-950"></canvas>
+            <div class="handle right"></div>
+        </div>
+        <button class="bg-blue-900 hover:bg-blue-800 text-white mr-4 font-semibold py-2 px-4 rounded-lg text-sm hidden" id="download">
+            Download
+        </button>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

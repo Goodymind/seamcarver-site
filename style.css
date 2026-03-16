@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.handle{
+  position:absolute;
+  background: #eff6ff;
+}
+
+.right{
+  width:calc(4vw);
+  height: 100%;
+  right:calc(-4vw - 3px);
+  top:0;
+  cursor:ew-resize;
+  border: 3px solid black;
+  border-radius: 20px;
+  opacity: 0.5;
+}
