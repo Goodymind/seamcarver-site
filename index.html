@@ -11,19 +11,37 @@
 <body class="bg-gray-950 m-5">
     <header class="m-3">
         <h1 class="text-8xl text-white">Seam Carver</h1>
-        <h2 class="text-white"><a href="https://itsalinus.com">By Alinus Abuke</a></h2>
-        <article class>
-            <p class="text-blue-50">
+        <h2 class="text-white"><a href="https://itsalinus.com">By <u>Alinus Abuke</u></a></h2>
+        <article>
+            <p class="text-blue-50 text-2xl p-2">
                 This was our final project for my Data Structures and Algorithms class.
                 I had a lot of run implementing this in JS.
             </p>
-            <p class="text-blue-50">
+            <p class="text-blue-50 text-2xl p-2">
                 This uses the dual-gradient energy function (but not squared to make it run faster). It measures the
                 distinctiveness of a pixel by calculating the rate of change of colors around it.
             </p>
-            <p>
-                This is actually very slow for large images. I'll optimize this one day.
+        </article>
+        <br>
+        <article class="p">
+            <h3 class="text-6xl text-blue-50">How it works</h3>
+            <p class="text-blue-50 text-2xl p-2">
+                First upload an image. Images that have lower resolutions are better. Around 800x800 pixels is a good.
+                1280x720 might struggle, while 1980x1090 and images taken by smartphones (which can reach up to
+                3000x2000) are probably too large.
             </p>
+            <p class="text-blue-50 text-2xl p-2">
+                Larger images would should still work, but they will be very slow. I'm currently working on implementing
+                a faster algorithm.
+            </p>
+            <p class="text-blue-50 text-2xl p-2"> It should look like this</p>
+            <img src="img/ex1.png" class="p-2 w-md" alt="">
+            <p class="text-blue-50 text-2xl p-2"> A grey bar should appear on the right of the image.</p>
+            <p class="text-blue-50 text-2xl p-2"> Drag the bar inwards to select your desired width. Let go of the bar to start the algorithm. Seam Carver is <i>content aware</i>, so it only removes the parts of the image that are empty. </p>
+        </article>
+        <article>
+            <h3 class="text-6xl text-blue-50">Sample</h3>
+            <img src="img/demo.gif" class="p-2 m-3 w-md border-4 border-blue-800" alt="">
         </article>
     </header>
     <main class="m-3">
@@ -44,7 +62,8 @@
             <canvas id="imageCanvas" class="bg-blue-950"></canvas>
             <div class="handle right"></div>
         </div>
-        <button class="bg-blue-900 hover:bg-blue-800 text-white mr-4 font-semibold py-2 px-4 rounded-lg text-sm hidden" id="download">
+        <button class="bg-blue-900 hover:bg-blue-800 text-white mr-4 font-semibold py-2 px-4 rounded-lg text-sm hidden"
+            id="download">
             Download
         </button>
 

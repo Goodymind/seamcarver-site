@@ -162,15 +162,17 @@ upload.addEventListener("change", () => {
             const maxWidth = window.innerWidth * 0.8;
             scale = image.width > maxWidth ? maxWidth / image.width : 1;
 
-            resizer.style.scale = scale;
+            // resizer.style.scale = scale;
+            canvas.style.transform = "scale(" + scale + ")";
+            canvas.style.transformOrigin = "top left";
 
             resizer.classList.add("inline-block");
             resizer.classList.remove("hidden");
 
-            resizer.style.width = image.width;
-            resizer.style.height = image.height;
-            resizer.width = image.width;
-            resizer.height = image.height;
+            resizer.style.width = image.width * scale + "px";
+            resizer.style.height = image.height * scale + "px";
+            resizer.width = image.width * scale;
+            resizer.height = image.height * scale;
             targetWidth = image.width;
 
             canvas.width = image.width;
@@ -241,7 +243,7 @@ function startResize(e, direction) {
         }
 
         if (startWidth > resizer.offsetWidth) {
-            targetWidth = Math.round(resizer.offsetWidth * canvas.width / canvas.offsetWidth);
+            targetWidth = Math.round(resizer.offsetWidth / scale);
             carving = true;
             requestAnimationFrame(carveStep);
         }
@@ -284,7 +286,7 @@ function startResizeTouch(e, direction) {
             }
 
             if (startWidth > resizer.offsetWidth) {
-                targetWidth = Math.round(resizer.offsetWidth * canvas.width / canvas.offsetWidth);
+                targetWidth = Math.round(resizer.offsetWidth  / scale);
                 carving = true;
                 requestAnimationFrame(carveStep);
             }
